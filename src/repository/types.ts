@@ -1,6 +1,6 @@
 export enum UserStatus {
-  online,
-  offline,
+  online = "online",
+  offline = "offline",
 }
 
 export type User = {

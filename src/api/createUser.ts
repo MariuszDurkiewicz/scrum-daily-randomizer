@@ -5,7 +5,7 @@ export const createUserFactory =
   (repository: Repository) => (req: Request, res: Response) => {
     const data = req.body;
     // for security reason data validation should always happen before sending it to the repository
-    const check = repository.get(data.id);
+    const check = repository.get(data.id) !== null;
 
     if (check) {
       res.status(400).send();
@@ -17,7 +17,7 @@ export const createUserFactory =
       name: data.name,
       role: data.role,
       team: data.team,
-      status: UserStatus.online,
+      status: data.status,
     };
 
     repository.set(user);

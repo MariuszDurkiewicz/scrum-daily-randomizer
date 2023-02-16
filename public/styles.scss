@@ -1,0 +1,95 @@
+body {
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  box-sizing: content-box;
+  box-shadow: none;
+  border: 0px;
+}
+
+header {
+  background-color: rgb(56, 111, 192);
+  color: lightgray;
+  padding: 10px;
+}
+
+@mixin generic-button {
+  padding: 6px 10px;
+  color: lightgray;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 3px;
+  height: 22px;
+  line-height: 22px;
+}
+
+.button_primary {
+  @include generic-button();
+  background-color: rgb(103, 164, 52);
+}
+
+.button_secondary {
+  @include generic-button();
+  background-color: rgb(71, 112, 223);
+}
+
+.page {
+  &_header {
+    display: flex;
+    align-items: center;
+  }
+
+  &_button {
+    margin-left: auto;
+  }
+
+  &_back {
+    display: inline-block;
+    text-decoration: none;
+    margin-bottom: 15px;
+
+    &::before {
+      content: "<";
+      padding: 5px;
+    }
+  }
+}
+
+.dashboard {
+  list-style-type: none;
+
+  li {
+    margin: 5px;
+    padding: 5px;
+  }
+}
+
+.form {
+  p {
+    span {
+      display: block;
+    }
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  tr {
+    width: 100%;
+    border-bottom: 1px solid rgb(228, 228, 228);
+  }
+
+  td, th {
+    padding: 5px;
+    text-align: left;
+  }
+
+  th {
+    text-transform: capitalize;
+    color: darkgray;
+  }
+}

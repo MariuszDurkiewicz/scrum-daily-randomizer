@@ -7,6 +7,7 @@ export const updateUserFactory =
     const data = req.body;
     // for security reason data validation should always happen before sending it to the repository
     const user = repository.get(id);
+
     if (!user) {
       res.status(404).send();
       return;
